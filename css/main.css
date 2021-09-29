@@ -1,0 +1,36 @@
+*{
+	box-sizing: border-box;
+	clear: both;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	border: 0;
+}
+body{
+	overflow: hidden;
+	position: relative;
+}
+.special_container{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	z-index: 1000;
+	height: 40px;
+	display: flex;
+}
+.special_container .block{
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+	background: red;
+	cursor: pointer;
+}
+.block:nth-child(1){
+	background:  url(../img/rocet.png) no-repeat;
+	background-size: contain;
+	background-position: center center;
+
+	border: 1px solid white;
+}
+
