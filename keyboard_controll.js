@@ -1,4 +1,4 @@
-let right = false;
+let right = false; 
 let left = false;
 let up = false;
 let down = false;
