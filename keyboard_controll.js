@@ -2,6 +2,7 @@ let right = false;
 let left = false;
 let up = false;
 let down = false;
+let pause = false
 let s = 0;
 
 function moveShip() {
@@ -10,7 +11,7 @@ function moveShip() {
       right = true;
     }
     if (e.keyCode == 37) {
-      left = true;
+      left = true; 
     }
     if (e.keyCode == 38) {
       up = true;
@@ -42,10 +43,20 @@ function armFire() {
     if (e.keyCode == 32) {
       if (s <= arm.arrayClassArm.length - 2) {
         arm.arrayClassArm[s].pusk(true)
-        s++
+        // arm.speedArm = 15
+        ++s
       } else {
         s = 0
       }
     }
   })
 }
+function pauseStart(){
+  document.addEventListener('keypress',function(e){
+    if(e.charCode == 112){
+      pause = !pause
+    }
+    pauseAnimation()
+  })
+}
+

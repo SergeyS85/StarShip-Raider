@@ -30,8 +30,8 @@ var starShip = {
 	// Arm ////////////////////////////// 
 
 var arm = {
-	speedArm: 10,
-	numberProjectile: 8,
+	speedArm: 15,
+	numberProjectile: 3,
 	clipForArm: [],
 	arrayClassArm: [],
 }
@@ -41,7 +41,7 @@ class Arm {
 		this.shut = false
 		this.posLy = starShip.posY
 		this.posLx = starShip.posX + 70.5
-		this.collision = theMonster.posMy
+		// this.collision = theMonster.posMy
 	}
 	pusk(bool) {
 		this.shut = bool
@@ -65,9 +65,12 @@ class Arm {
 	drawArm() {
 		ctx.drawImage(arm.clipForArm[s], this.posLx, this.posLy, 20, 90);
 	}
+	XYRocket(){
+		console.log(this.posLy)
+	}
 
 }
-
+// let armas = new Arm();
 // Stars //////////////////
 
 var stars = {
@@ -82,23 +85,23 @@ var stars = {
 	// Monster ///////////////
 
 var monster = {
-	speedMonster: 2,
-	arryaMonster: []
+	countMonster : 2,
+	speedMonster: 0.9,
+	arrayMonster: [],
+	coordinateMx: [], 
+	coordinateMy: [],
 }
 
-class Monster {
-	constructor() {
-		this.posMx = w / 2
-		this.posMy = 0
-	}
-	moveMonster() {
-		this.posMy += monster.speedMonster
-		if (this.posMy >= h) this.posMy = 0
-	}
-	drawMonst() {
-		ctx.drawImage(monst, this.posMx, this.posMy, 60, 60);
-	}
-	ddd() {
-		console.log(this.posMy)
-	}
-}
+// class Monster {
+// 	constructor(posMx,posMy) {
+// 		this.posMx = posMx
+// 		this.posMy = posMy
+// 	}
+// 	moveMonster() {
+// 		this.posMy += monster.speedMonster
+// 		if (this.posMy >= h) this.posMy = 0
+// 	}
+// 	drawMonst() {
+// 		ctx.drawImage(monst, this.posMx, this.posMy, 60, 60);
+// 	}
+// }

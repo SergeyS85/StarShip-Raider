@@ -1,25 +1,27 @@
 let ship = new Image(); 
 let bg = new Image();
 let armNumber = new Image();
-let monst = new Image()
+let monst = new Image() 
 let shiftX = 0;
 let tickCount = 0;
 // Загрузка изображений
 function loadImage() {
 	ship.src = 'img/sprites_ship.png'
 	bg.src = 'img/cosmos.png'
-	for (var j in stars.arrStars) {
+	for (let j in stars.arrStars) {
 		stars.arrStars[j].src = 'img/moveCosmos/star' + Math.ceil(Math.random() * 10) + '.png'
 	}
-	for (var l in arm.clipForArm) {
+	for (let l in arm.clipForArm) {
 		arm.clipForArm[l].src = 'img/rocet-export.png'
 
 	}
-	monst.src = 'img/monster1.png'
+	for(let j in monster.arrayMonster){
+		monster.arrayMonster[j].src = 'img/monster1.png'
+	}
 }
 // Создание массива звёзд и их координат
 function redrawStars() {
-	for (var i = 0; i < stars.starCount; i++) {
+	for (let i = 0; i < stars.starCount; i++) {
 		stars.arrStars.push(new Image)
 		stars.arrX.push(Math.random() * w)
 		stars.arrY.push(Math.random() * h)
@@ -30,8 +32,8 @@ function redrawStars() {
 
 // Отрисовка звёзд на canvas
 function randStars() {
-	for (var i = 0; i < stars.arrStars.length; i++) {
-		var nitro = stars.arrSpeed[i]
+	for (let i = 0; i < stars.arrStars.length; i++) {
+		let nitro = stars.arrSpeed[i]
 		up ? nitro *= 4 : stars.speedStar[i]
 		ctx.drawImage(stars.arrStars[i], stars.arrX[i], stars.arrY[i] += nitro, 5, 5)
 		if (stars.arrY[i] >= h) stars.arrY[i] = 0
@@ -61,21 +63,40 @@ function createShip() {
 
 // Создание выбранного орудия
 function createTheNewArm() {
-	for (var i = 0; i < arm.numberProjectile; i++) {
+	for (let i = 0; i < arm.numberProjectile; i++) {
 		arm.arrayClassArm.push(new Arm())
 	}
-	for (var j = 0; j < arm.numberProjectile; j++) {
+	for (let j = 0; j < arm.numberProjectile; j++) {
 		arm.clipForArm.push(armNumber)
 	}
 }
 // Отрисовка орудия
 function drawNewArm() {
-	for (var i = 0; i < arm.arrayClassArm.length; i++) {
+	for (let i = 0; i < arm.arrayClassArm.length; i++) {
 		arm.arrayClassArm[i].createArm()
 		arm.arrayClassArm[i].drawArm(15, 80, 'red')
-
 	}
 }
-// отрисовка монстра
 
-var theMonster = new Monster()
+
+// Создание массива монстров
+function createArrayMonster(){
+   for(let i = 0;i < monster.countMonster;i++){
+   	monster.arrayMonster.push(new Image)
+   	monster.coordinateMx.push(Math.random() * w)
+   	monster.coordinateMy.push(Math.random() * -600)
+   }
+}
+// Отрисовка монстра
+function redrawMonster(){
+	for(let i = 0;i < monster.arrayMonster.length;i++){
+		// monster.arrayMonster[i].drawMonst()
+		ctx.drawImage(monster.arrayMonster[i], monster.coordinateMx[i], monster.coordinateMy[i] += monster.speedMonster, 60, 60);
+		if(monster.coordinateMy[i] > h){
+			monster.coordinateMy[i] = -100
+			monster.coordinateMx[i] = Math.random() * w
+		} 
+	}
+}
+// let theMonster = new Monster(600,0)
+console.log(monster.coordinateMx)
