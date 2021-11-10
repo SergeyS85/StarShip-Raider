@@ -85,7 +85,7 @@ var stars = {
 	// Monster ///////////////
 
 var monster = {
-	countMonster : 2,
+	countMonster : 10,
 	speedMonster: 0.9,
 	arrayMonster: [],
 	coordinateMx: [], 

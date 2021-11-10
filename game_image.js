@@ -3,7 +3,9 @@ let bg = new Image();
 let armNumber = new Image();
 let monst = new Image() 
 let shiftX = 0;
+let shiftMonsterFrameX = 0
 let tickCount = 0;
+let tickMonstCount = 0
 // Загрузка изображений
 function loadImage() {
 	ship.src = 'img/sprites_ship.png'
@@ -16,7 +18,7 @@ function loadImage() {
 
 	}
 	for(let j in monster.arrayMonster){
-		monster.arrayMonster[j].src = 'img/monster1.png'
+		monster.arrayMonster[j].src = 'img/fly_monster.png'
 	}
 }
 // Создание массива звёзд и их координат
@@ -86,12 +88,18 @@ function createArrayMonster(){
    	monster.coordinateMx.push(Math.random() * w)
    	monster.coordinateMy.push(Math.random() * -600)
    }
+
 }
 // Отрисовка монстра
 function redrawMonster(){
 	for(let i = 0;i < monster.arrayMonster.length;i++){
 		// monster.arrayMonster[i].drawMonst()
-		ctx.drawImage(monster.arrayMonster[i], monster.coordinateMx[i], monster.coordinateMy[i] += monster.speedMonster, 60, 60);
+		ctx.drawImage(monster.arrayMonster[i],shiftMonsterFrameX,0,64,64, monster.coordinateMx[i], monster.coordinateMy[i] += monster.speedMonster, 100, 100);
+		if (tickMonstCount > 60) {
+		  shiftMonsterFrameX = (shiftMonsterFrameX >= (256 - 64)) ? 0 : shiftMonsterFrameX += 64
+		  tickMonstCount = 0
+	  }
+	  tickMonstCount++ 
 		if(monster.coordinateMy[i] > h){
 			monster.coordinateMy[i] = -100
 			monster.coordinateMx[i] = Math.random() * w
