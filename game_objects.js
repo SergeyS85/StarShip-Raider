@@ -31,7 +31,7 @@ var starShip = {
 
 var arm = {
 	speedArm: 15,
-	numberProjectile: 30,
+	numberProjectile: 3,
 	clipForArm: [],
 	arrayClassArm: [],
 }

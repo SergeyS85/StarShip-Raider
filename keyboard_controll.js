@@ -40,6 +40,7 @@ function moveShip() {
 
 function armFire() {
   document.addEventListener('keypress', function(e) {
+
     if (e.keyCode == 32) {
       if (s < arm.arrayClassArm.length) {
         s++
@@ -51,9 +52,10 @@ function armFire() {
 }
 function pauseStart(){
   document.addEventListener('keypress',function(e){
-    if(e.charCode == 112){
+    if(e.charCode == 112 || e.charCode == 1079){
       pause = !pause
     }
+    console.log(e)
     pauseAnimation()
   })
 }

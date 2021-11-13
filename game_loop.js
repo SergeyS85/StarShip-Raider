@@ -1,5 +1,5 @@
 function tick() {
-	// ctx.clearRect(0, 0, w, h);
+	ctx.clearRect(0, 0, w, h);
 	// ////////////////////
   requestId = undefined
   starShip.move();  // Вызов метода для передвижения корабля с клавиатуры
@@ -11,7 +11,7 @@ function tick() {
   detectRocketXY() // Коллизия ракеты с монстром(столкновение)
   redrawMonster() // Отрисовка монстра
 	// ///////////////////
-	start()
+	start() // Старт и пауза игры с появлением меню
 
 }
 
