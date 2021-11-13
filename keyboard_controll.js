@@ -41,13 +41,11 @@ function moveShip() {
 function armFire() {
   document.addEventListener('keypress', function(e) {
     if (e.keyCode == 32) {
-      if (s <= arm.arrayClassArm.length - 2) {
+      if (s < arm.arrayClassArm.length) {
+        s++
         arm.arrayClassArm[s].pusk(true)
-        // arm.speedArm = 15
-        ++s
-      } else {
-        s = 0
-      }
+      } 
+      if(s >= arm.arrayClassArm.length-1) s = 0
     }
   })
 }

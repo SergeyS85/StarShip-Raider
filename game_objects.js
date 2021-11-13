@@ -31,7 +31,7 @@ var starShip = {
 
 var arm = {
 	speedArm: 15,
-	numberProjectile: 3,
+	numberProjectile: 30,
 	clipForArm: [],
 	arrayClassArm: [],
 }
@@ -85,7 +85,7 @@ var stars = {
 	// Monster ///////////////
 
 var monster = {
-	countMonster : 10,
+	countMonster : 5,
 	speedMonster: 0.9,
 	arrayMonster: [],
 	coordinateMx: [], 

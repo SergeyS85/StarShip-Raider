@@ -73,7 +73,7 @@ function createTheNewArm() {
 	}
 }
 // Отрисовка орудия
-function drawNewArm() {
+function drawNewArm() { 
 	for (let i = 0; i < arm.arrayClassArm.length; i++) {
 		arm.arrayClassArm[i].createArm()
 		arm.arrayClassArm[i].drawArm(15, 80, 'red')
@@ -95,10 +95,12 @@ function redrawMonster(){
 	for(let i = 0;i < monster.arrayMonster.length;i++){
 		// monster.arrayMonster[i].drawMonst()
 		ctx.drawImage(monster.arrayMonster[i],shiftMonsterFrameX,0,64,64, monster.coordinateMx[i], monster.coordinateMy[i] += monster.speedMonster, 100, 100);
-		if (tickMonstCount > 60) {
-		  shiftMonsterFrameX = (shiftMonsterFrameX >= (256 - 64)) ? 0 : shiftMonsterFrameX += 64
-		  tickMonstCount = 0
-	  }
+		
+			if (tickMonstCount > 30) {
+		    shiftMonsterFrameX = (shiftMonsterFrameX >= (256 - 64)) ? 0 : shiftMonsterFrameX += 64
+		    tickMonstCount = 0
+	    }
+		
 	  tickMonstCount++ 
 		if(monster.coordinateMy[i] > h){
 			monster.coordinateMy[i] = -100
