@@ -23,6 +23,7 @@ function init() {
 	createArrayMonster() // Создание массива объектов монстра(new Image)
 	loadImage() // Подгрузка изображений
 	pauseStart() // Пауза игры нажатием клавиши 'P'
+	musicGame()
 	tick() // Главная анимация кадры/секунды
 	
 }

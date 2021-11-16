@@ -109,4 +109,4 @@ function redrawMonster(){
 	}
 }
 // let theMonster = new Monster(600,0)
-console.log(monster.coordinateMx)
+// console.log(monster.coordinateMx)

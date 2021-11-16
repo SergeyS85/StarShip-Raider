@@ -45,6 +45,7 @@ function armFire() {
       if (s < arm.arrayClassArm.length) {
         s++
         arm.arrayClassArm[s].pusk(true)
+        rocketSound()
       } 
       if(s >= arm.arrayClassArm.length-1) s = 0
     }

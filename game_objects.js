@@ -3,7 +3,7 @@
 var bgStars = {
 	bgY_1: 0,
 	bgY_2: (-h * 2) + 5,
-	bgSpeed: 0.1,
+	bgSpeed: 0.8,
 }
 
 // Star Ship /////////////////////////
