@@ -3,7 +3,7 @@ let musicSrc = 'sound/SpaceRiddle.mp3'
 
 function rocketSound(){	
 	let soundForRocket = new Audio(soundSrc);
-	soundForRocket.volume = 0.2
+	soundForRocket.volume = 0.1
 	soundForRocket.play()
 	
 }

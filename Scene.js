@@ -4,5 +4,7 @@
 // 	}
 // }
 function menu(){
-	if(pause == true) tick()
+	if(pause == false) init()
+	if(pause) gameMenu()
 }
+

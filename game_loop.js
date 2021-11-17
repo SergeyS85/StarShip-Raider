@@ -22,10 +22,21 @@ function init() {
 	armFire() // keyboard стрельба из орудия
 	createArrayMonster() // Создание массива объектов монстра(new Image)
 	loadImage() // Подгрузка изображений
-	pauseStart() // Пауза игры нажатием клавиши 'P'
+	pauseStart() // Пауза игры нажатием клавиши 'P' или 'З'
 	musicGame()
 	tick() // Главная анимация кадры/секунды
 	
 }
-init()  
+// menu()
+// bgImage()
+init() 
+// let onOfGame = false 
+// if(onOfGame == false) gameMenu()
+// window.addEventListener('keypress',function(e){
+// 	if(e.key == 'z'){
+// 		onOfGame = !onOfGame
+// 		if(onOfGame) init()
+//     if(onOfGame == false) gameMenu()
+// 	}
+// })
 

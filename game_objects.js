@@ -30,7 +30,7 @@ var starShip = {
 	// Arm ////////////////////////////// 
 
 var arm = {
-	speedArm: 15,
+	speedArm: 0, 
 	numberProjectile: 3,
 	clipForArm: [],
 	arrayClassArm: [],
@@ -41,7 +41,6 @@ class Arm {
 		this.shut = false
 		this.posLy = starShip.posY
 		this.posLx = starShip.posX + 70.5
-		// this.collision = theMonster.posMy
 	}
 	pusk(bool) {
 		this.shut = bool
@@ -52,6 +51,7 @@ class Arm {
 			this.posLy = starShip.posY
 		}
 		if (this.shut == false) {
+			// arm.speedArm = 0
 			this.posLy = starShip.posY
 			this.posLx = starShip.posX + 70.5
 		}
@@ -65,10 +65,6 @@ class Arm {
 	drawArm() {
 		ctx.drawImage(arm.clipForArm[s], this.posLx, this.posLy, 20, 90);
 	}
-	XYRocket(){
-		console.log(this.posLy)
-	}
-
 }
 // let armas = new Arm();
 // Stars //////////////////

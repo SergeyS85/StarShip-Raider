@@ -41,13 +41,16 @@ function moveShip() {
 function armFire() {
   document.addEventListener('keypress', function(e) {
 
-    if (e.keyCode == 32) {
-      if (s < arm.arrayClassArm.length) {
-        s++
-        arm.arrayClassArm[s].pusk(true)
-        rocketSound()
-      } 
-      if(s >= arm.arrayClassArm.length-1) s = 0
+    if(pause === false){
+      if (e.keyCode == 32) {
+        if (s < arm.arrayClassArm.length) {
+          s++
+          arm.speedArm = 15
+          arm.arrayClassArm[s].pusk(true)
+          rocketSound()
+        } 
+        if(s >= arm.arrayClassArm.length-1) s = 0
+      }
     }
   })
 }
@@ -57,6 +60,7 @@ function pauseStart(){
       pause = !pause
     }
     console.log(e)
+    // menu()
     pauseAnimation()
   })
 }

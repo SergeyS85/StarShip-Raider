@@ -54,7 +54,7 @@ function background() {
 
 // Создание и отрисовка корабля
 function createShip() {
-	ctx.drawImage(ship, shiftX, 0, 214, 244, starShip.posX, starShip.posY, 160, 160)
+	ctx.drawImage(ship, shiftX, 0, 214, 244, starShip.posX, starShip.posY, 160, 180)
 	if (tickCount > 7) {
 		shiftX = (shiftX >= (1075 - 215)) ? 0 : shiftX += 215
 		tickCount = 0
@@ -104,7 +104,7 @@ function redrawMonster(){
 	  tickMonstCount++ 
 		if(monster.coordinateMy[i] > h){
 			monster.coordinateMy[i] = -100
-			monster.coordinateMx[i] = Math.random() * w
+			monster.coordinateMx[i] = Math.random() * w-100
 		} 
 	}
 }
