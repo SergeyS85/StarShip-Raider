@@ -16,6 +16,12 @@ body{
 	position: relative;
 	font-family: 'BigSpace';
 }
+.off{
+	display: none !important;
+}
+.on{
+	display: block !important;
+}
 .special_container{
 	position: absolute;
 	bottom: 10px;
@@ -77,4 +83,23 @@ body{
 	text-align: center;
 	transform: translateY(-50%);
 }
-
+.load_menu{
+	padding-top: 20%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	font-family: 'BigSpace';
+	font-size: 40px;
+	width: 100vw;
+	height: 100vh;
+	color: white;
+	text-align: center;
+	/*z-index: 1000;*/
+}
+.logo_technology{
+	font-size: 20px;
+	position: absolute;
+	bottom: 50px;
+	right: 50px;
+}

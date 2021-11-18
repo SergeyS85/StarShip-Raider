@@ -16,7 +16,7 @@ function musicGame(){
 		music.autoplay = true
 	  music.play()
 
-	  console.log(music)
+	  console.log('asdfasdf')
 	})
 }
 
