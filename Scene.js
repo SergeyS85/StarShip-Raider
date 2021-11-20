@@ -1,8 +1,3 @@
-// class Scene{
-// 	constructor(){
-
-// 	}
-// }
 let sceneMenu = false;
 let sceneGame = false;
 function menu(){

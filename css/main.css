@@ -84,7 +84,7 @@ body{
 	transform: translateY(-50%);
 }
 .load_menu{
-	padding-top: 20%;
+	padding-top: 10%;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -97,9 +97,22 @@ body{
 	text-align: center;
 	/*z-index: 1000;*/
 }
+.title_game{
+	font-size: 150px;
+	margin-bottom: 100px;
+	text-shadow: 3px 3px 1px rgb(141,214,204)
+}
 .logo_technology{
 	font-size: 20px;
 	position: absolute;
-	bottom: 50px;
-	right: 50px;
+	bottom: 20px;
+	right: 30px;
+}
+.j{
+	font-size: 25px;
+}
+
+.load_menu li:hover{
+	text-shadow: 0px 0px 10px rgb(141,214,204);
+	cursor: pointer;
 }

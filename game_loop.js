@@ -44,4 +44,11 @@ function init() {
 // 	}
 // })
 gameMenu()
-musicGame()
+// musicGame()
+window.addEventListener('load',function(){
+	setTimeout(function(){
+	musicGame()
+	console.log('dsafsdf')
+},4000)
+})
+
