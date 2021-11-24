@@ -8,14 +8,17 @@ function tick() {
 	randStars() // Рандомная отрисовка звёзд
 	drawNewArm() // Отрисовка и анимация снаряда
 	createShip(); // Создание корабля 
-  detectRocketXY() // Коллизия ракеты с монстром(столкновение)
+  
   redrawMonster() // Отрисовка монстра
+  detectRocketXY() // Коллизия ракеты с монстром(столкновение)
+  // rotateMonsterCoordinateXwithiStarShip()
+  
+  
 	// ///////////////////
 	start() // Старт и пауза игры с появлением меню
-
 }
 
-function init() {
+function initGame() {
 	createTheNewArm() // Создание выбранного орудия
 	moveShip() // Функция по контролю движения корабля с клавиатуры true/false  
 	redrawStars() // Создание объектов изображения звёзд
@@ -27,7 +30,7 @@ function init() {
 	tick() // Главная анимация кадры/секунды
 	
 }
-// menu()
+menu()
 // bgImage()
 // init() 
 // let onOfGame = false 
@@ -43,12 +46,11 @@ function init() {
 //     } 
 // 	}
 // })
-gameMenu()
+// gameMenu()
 // musicGame()
 window.addEventListener('load',function(){
 	setTimeout(function(){
 	musicGame()
-	console.log('dsafsdf')
 },4000)
 })
 

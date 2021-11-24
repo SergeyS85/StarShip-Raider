@@ -1,11 +1,11 @@
 let ship = new Image(); 
 let bg = new Image();
-let armNumber = new Image();
-let monst = new Image() 
+// let monst = new Image() 
 let shiftX = 0;
-let shiftMonsterFrameX = 0
+
+let shiftMonsterExplosionX = 0;
 let tickCount = 0;
-let tickMonstCount = 0
+
 // Загрузка изображений
 function loadImage() {
 	ship.src = 'img/sprites_ship.png'
@@ -17,8 +17,8 @@ function loadImage() {
 		arm.clipForArm[l].src = 'img/rocet-export.png'
 
 	}
-	for(let j in monster.arrayMonster){
-		monster.arrayMonster[j].src = 'img/fly_monster.png'
+	for(let j in monster.arrayImageMonster){
+		monster.arrayImageMonster[j].src = 'img/the_new_sprite_monster/all_sprite_monster.png'
 	}
 }
 // Создание массива звёзд и их координат
@@ -67,16 +67,14 @@ function createShip() {
 function createTheNewArm() {
 	for (let i = 0; i < arm.numberProjectile; i++) {
 		arm.arrayClassArm.push(new Arm())
-	}
-	for (let j = 0; j < arm.numberProjectile; j++) {
-		arm.clipForArm.push(armNumber)
+		arm.clipForArm.push(new Image)
 	}
 }
 // Отрисовка орудия
 function drawNewArm() { 
 	for (let i = 0; i < arm.arrayClassArm.length; i++) {
 		arm.arrayClassArm[i].createArm()
-		arm.arrayClassArm[i].drawArm(15, 80, 'red')
+		arm.arrayClassArm[i].drawArm()
 	}
 }
 
@@ -84,29 +82,21 @@ function drawNewArm() {
 // Создание массива монстров
 function createArrayMonster(){
    for(let i = 0;i < monster.countMonster;i++){
-   	monster.arrayMonster.push(new Image)
-   	monster.coordinateMx.push(Math.random() * w)
-   	monster.coordinateMy.push(Math.random() * -600)
+   	
+   	monster.arrayClassMonster.push(new Monster())
+   	monster.arrayImageMonster.push(new Image)
+   	monster.posMx.push(Math.random() * w)
+   	monster.posMy.push(Math.random() * -600)
    }
 
 }
 // Отрисовка монстра
 function redrawMonster(){
-	for(let i = 0;i < monster.arrayMonster.length;i++){
-		// monster.arrayMonster[i].drawMonst()
-		ctx.drawImage(monster.arrayMonster[i],shiftMonsterFrameX,0,64,64, monster.coordinateMx[i], monster.coordinateMy[i] += monster.speedMonster, 100, 100);
+	for(let i = 0;i < monster.arrayClassMonster.length;i++){
+		monster.arrayClassMonster[i].drawMonst()		
+		monster.arrayClassMonster[i].flyingAnimMonst()			
+		monster.arrayClassMonster[i].explosionMonst()			
+		monster.arrayClassMonster[i].rotateMonsterCoordinateXwithiStarShip()			
 		
-			if (tickMonstCount > 30) {
-		    shiftMonsterFrameX = (shiftMonsterFrameX >= (256 - 64)) ? 0 : shiftMonsterFrameX += 64
-		    tickMonstCount = 0
-	    }
-		
-	  tickMonstCount++ 
-		if(monster.coordinateMy[i] > h){
-			monster.coordinateMy[i] = -100
-			monster.coordinateMx[i] = Math.random() * w-100
-		} 
 	}
 }
-// let theMonster = new Monster(600,0)
-// console.log(monster.coordinateMx)

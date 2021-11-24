@@ -1,3 +1,4 @@
+
 let bgMenu = new Image();
 bgMenu.src = 'img/sprite_menu/index2.png'
 let bgMenuShiftX = 0;
@@ -21,7 +22,7 @@ function bgImage(){
 }
 
 function gameMenu(){
-	// ctx.clearRect(0, 0, w, h);
+	ctx.clearRect(0, 0, w, h);
 
 	bgImage()
 	requestAnimationFrame(gameMenu)

@@ -58,10 +58,19 @@ function pauseStart(){
   document.addEventListener('keypress',function(e){
     if(e.charCode == 112 || e.charCode == 1079){
       pause = !pause
+      pauseSound()
+      pauseAnimation()
     }
-    console.log(e)
     // menu()
-    pauseAnimation()
+
+    
   })
 }
 
+function switchScene(){
+  document.addEventListener('keypress',function(e){
+    if(e.charCode == 122 || e.charCode == 1103){
+      
+    }
+  })
+}
