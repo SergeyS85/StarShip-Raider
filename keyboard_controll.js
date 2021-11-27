@@ -70,7 +70,12 @@ function pauseStart(){
 function switchScene(){
   document.addEventListener('keypress',function(e){
     if(e.charCode == 122 || e.charCode == 1103){
-      
+
+      sceneMenu = !sceneMenu;
+      sceneGame = !sceneGame
+      menu()
+      startBackgroundMusic()
+      console.dir(sceneGame,sceneMenu,pause,)
     }
   })
 }

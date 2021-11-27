@@ -93,10 +93,9 @@ function createArrayMonster(){
 // Отрисовка монстра
 function redrawMonster(){
 	for(let i = 0;i < monster.arrayClassMonster.length;i++){
-		monster.arrayClassMonster[i].drawMonst()		
-		monster.arrayClassMonster[i].flyingAnimMonst()			
+		monster.arrayClassMonster[i].drawMonst()
+		monster.arrayClassMonster[i].flyingAnimMonst()									
 		monster.arrayClassMonster[i].explosionMonst()			
-		monster.arrayClassMonster[i].rotateMonsterCoordinateXwithiStarShip()			
-		
+		monster.arrayClassMonster[i].AIMonster()					
 	}
 }

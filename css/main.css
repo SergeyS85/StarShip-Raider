@@ -38,13 +38,16 @@ body{
 	cursor: pointer;
 }
 .block:nth-child(1){
-	background:  url(../img/rocet.png) no-repeat;
+	background:  url(../img/rocet-export.png) no-repeat;
 	background-size: contain;
 	background-position: center center;
 
 	border: 1px solid white;
 }
 /*Count score*/
+progress{
+	width: 360px;
+}
 .count-score{
 	position: absolute;
 	display: flex;

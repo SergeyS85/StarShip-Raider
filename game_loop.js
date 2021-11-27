@@ -1,19 +1,15 @@
 function tick() {
 	ctx.clearRect(0, 0, w, h);
 	// ////////////////////
-  requestId = undefined
+  requestId = undefined // Переменная для остановки requestAnimationFrame
   starShip.move();  // Вызов метода для передвижения корабля с клавиатуры
 	starShip.limitXY(); // Ограничение передвижения корабля по экрану
 	background(); // Задний фон космос
 	randStars() // Рандомная отрисовка звёзд
 	drawNewArm() // Отрисовка и анимация снаряда
 	createShip(); // Создание корабля 
-  
-  redrawMonster() // Отрисовка монстра
   detectRocketXY() // Коллизия ракеты с монстром(столкновение)
-  // rotateMonsterCoordinateXwithiStarShip()
-  
-  
+  redrawMonster() // Отрисовка монстра(методы монстра) 
 	// ///////////////////
 	start() // Старт и пауза игры с появлением меню
 }
@@ -26,13 +22,13 @@ function initGame() {
 	createArrayMonster() // Создание массива объектов монстра(new Image)
 	loadImage() // Подгрузка изображений
 	pauseStart() // Пауза игры нажатием клавиши 'P' или 'З'
-	
+	// ////////////////
 	tick() // Главная анимация кадры/секунды
 	
 }
-menu()
+// menu()
 // bgImage()
-// init() 
+initGame() 
 // let onOfGame = false 
 // if(onOfGame == false) gameMenu()
 // window.addEventListener('keypress',function(e){
@@ -48,9 +44,6 @@ menu()
 // })
 // gameMenu()
 // musicGame()
-window.addEventListener('load',function(){
-	setTimeout(function(){
-	musicGame()
-},4000)
-})
+startBackgroundMusic()
 
+switchScene() // Переключение сцены клавишей 'z'

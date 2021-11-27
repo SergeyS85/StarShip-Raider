@@ -26,6 +26,7 @@ var starShip = {
 			if (up){
 				this.posY -= this.speedShip + 7;
 				monster.speedMonster = 0.4
+
 			}
 			if(!up) monster.speedMonster = 0.1
 			if (down) this.posY += this.speedShip;
@@ -100,13 +101,15 @@ class Monster {
 		this.shiftFrameX = monster.shiftFrameX;
 		this.shiftFrameY = monster.shiftFrameY;
 		this.frameRateLength = 192
-		this.posMx = Math.random() * w;
+		this.posMx = Math.random() * (w-100);
 		this.posMy = Math.random() * -600;
-		this.headShotMonster = false
+		this.headShotMonster = true
+		this.blow = false
 	}
 	drawMonst() {
 		for(let m = 0;m < monster.arrayImageMonster.length;m++){
-			ctx.drawImage(monster.arrayImageMonster[m],this.shiftFrameX,this.shiftFrameY , 64,64,this.posMx, this.posMy+= monster.speedMonster, 100, 100);			
+			ctx.drawImage(monster.arrayImageMonster[m],this.shiftFrameX,this.shiftFrameY , 64,64,this.posMx, this.posMy+= monster.speedMonster, 100, 100);
+						
 		}
 	}
 	flyingAnimMonst(){
@@ -118,25 +121,27 @@ class Monster {
 		  monster.tickMonstCount++ 
 			if(this.posMy > h){
 				this.posMy = -100
-				this.posMx = Math.random() * w-100
+				this.posMx = Math.random() * (w-100)
 			}
 	}
 	explosionMonst(){
-		if(this.headShotMonster){
+		if(this.blow){
+			this.headShotMonster = false
 			this.frameRateLength = 768
 			this.shiftFrameY = 128
 			
 		}
-		if(this.headShotMonster && this.shiftFrameX >= this.frameRateLength){
-			this.headShotMonster = false
+		if(this.blow && this.shiftFrameX >= this.frameRateLength){
+			this.blow = false
+			this.headShotMonster = true
 			this.shiftFrameY = 0
 			this.frameRateLength = 192
-			this.posMx = Math.random() * w;
+			this.posMx = Math.random() * (w-100);
 			this.posMy = Math.random() * -600;
 		}
 	}
-	rotateMonsterCoordinateXwithiStarShip(){
-		if(this.headShotMonster == false){
+	AIMonster(){
+		if(this.blow == false){
 			if(starShip.posX < this.posMx){
 				this.shiftFrameY = 0
 			}

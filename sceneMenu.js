@@ -5,7 +5,15 @@ let bgMenuShiftX = 0;
 let bgMenuShiftY = 0;
 let tickBgMenuX = 0;
 let tickBgMenuY = 0;
-
+function startBackgroundMusic(){
+	if(sceneMenu){
+		window.addEventListener('load',function(){
+	setTimeout(function(){
+	musicGame()
+},4000)
+})
+	}
+}
 function bgImage(){			
 	ctx.drawImage(bgMenu,bgMenuShiftX,bgMenuShiftY,2880,1620,0,0,w,h)
 	
