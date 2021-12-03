@@ -8,13 +8,13 @@
 }
 
 .block_arm:nth-child(1){
-	background:  url(../img/rocet-export.png) no-repeat;	
+	background:  url(../img/rocket_scifi.png) no-repeat;	
 }
 .block_arm:nth-child(2){
-	background:  url(../img/lazer.png) no-repeat;
+	background:  url(../img/lazer_scifi.png) no-repeat;
 }
 .block_arm:nth-child(3){
-	background:  url(../img/mine.png) no-repeat;
+	background:  url(../img/mine_scifi.png) no-repeat;
 }
 .special_container_arm .block_arm{
 	width: 40px;
@@ -22,8 +22,12 @@
 	margin-right: 10px;
   background-size: contain;
 	background-position: center center;
-	border: 1px solid white;
+	border: 1px solid #2F5A7C;
 	cursor: pointer;
+	transition: 0.3s;
+}
+.special_container_arm .block_arm:hover{
+	box-shadow: 0 0 10px 1px #75ABE3;
 }
 /*Count score*/
 
