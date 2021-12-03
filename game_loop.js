@@ -1,3 +1,4 @@
+
 function tick() {
 	ctx.clearRect(0, 0, w, h);
 	// ////////////////////
@@ -15,10 +16,12 @@ function tick() {
 }
 
 function initGame() {
-	createTheNewArm() // Создание выбранного орудия
-	moveShip() // Функция по контролю движения корабля с клавиатуры true/false  
+
+	moveShip() // Функция по контролю движения корабля с клавиатуры true/false 
+	switchArm() // Переключение типа орудий в панели орудий с права в низу
+	createTheNewArm() // Создание выбранного орудия 
 	redrawStars() // Создание объектов изображения звёзд
-	armFire() // keyboard стрельба из орудия
+	armFire() // keyboard стрельба из орудия	
 	createArrayMonster() // Создание массива объектов монстра(new Image)
 	loadImage() // Подгрузка изображений
 	pauseStart() // Пауза игры нажатием клавиши 'P' или 'З'
@@ -28,7 +31,7 @@ function initGame() {
 }
 // menu()
 // bgImage()
-initGame() 
+// initGame() 
 // let onOfGame = false 
 // if(onOfGame == false) gameMenu()
 // window.addEventListener('keypress',function(e){
@@ -44,6 +47,10 @@ initGame()
 // })
 // gameMenu()
 // musicGame()
-startBackgroundMusic()
+// startBackgroundMusic()
 
-switchScene() // Переключение сцены клавишей 'z'
+// switchScene() // Переключение сцены клавишей 'z'
+// console.log(typeArm.dataset.lazer)
+
+
+

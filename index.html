@@ -4,51 +4,60 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="img/ico.png">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/mainMenu.css">
+	<link rel="stylesheet" href="css/game_room_interface.css">
 	<title>Star Ship Raider</title>
 </head>
 <body>
 	<canvas id="canvas"></canvas>
 	<!-- load_menu -->
-	<div class="load_menu off">
+	<div class="load_menu">
 		<h1 class="title_game">Star Ship Raider</h1>
-		<li>PlayGame</li>
-		<li>Options</li>
-		<li>Fullscreen</li>
+		<div class="select_block">
+			<li class="playgame">PlayGame</li>
+		  <li>Options</li>
+		  <li>Fullscreen</li>
+		</div>
 		<div class="logo_technology"><p>Hc<span class='j'>J</span></p></div>
 	</div>
   <!-- game_interface -->
-	<div class="game_interface">
-
+	<div class="game_interface off">
 		<div class="count-score">
 			<p class="title_score">score</p>
 			<span class="number_score">0</span>
 		</div>
 		<div class="pause_menu ">
 			<div class="option_block">
-				<li>Game</li>
+				<li class="pauseGame">Game</li>
 				<li>Save</li>
 				<li>Quit</li>
 			</div>
 		</div>
-		<div class="special_container ">
-			<div class="block"></div>
-			<div class="block"></div>
-			<div class="block"></div> 
+		<div class="special_container_arm ">
+			<div class="block_arm rocket"></div>
+			<div class="block_arm lazer"></div>
+			<div class="block_arm mine"></div> 
+		</div>
+	</div>
+
+	<!-- preloader -->
+	<div class="preloader">
+		<div class="load_container">
+			<div class="loading"></div>
 		</div>
 	</div>
 	<!-- javascript -->
-	<script src="main.js"></script>	
+	<script src="main.js"></script>
+	<script src="loadAudio.js"></script>	
 	<script src="keyboard_controll.js"></script>
 	<script src="game_objects.js"></script>
 	<script src="game_image.js"></script>
 	<script src="collisionDetect.js"></script>	
 	<script src="pauseAnimate.js"></script>	
-	<script src="sceneMenu.js"></script>	
-	
-	<script src="loadAudio.js"></script>
+	<script src="sceneMenu.js"></script>		
 	<script src="Scene.js"></script>
 	<script src="game_loop.js"></script>
+	<script src="preloader.js"></script>
   
 </body>
 </html>

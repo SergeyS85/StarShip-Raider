@@ -1,16 +1,23 @@
+let music = new Audio()
+
 function rocketSound(){	
 	let soundForRocket = new Audio();
 	soundForRocket.src = 'sound/laserexp_loud.mp3'
 	soundForRocket.volume = 0.06
 	soundForRocket.play()	
 }
+
 function musicGame(){	
-	let music = new Audio()
+	
 	music.src = 'sound/SpaceRiddle.mp3'
-	music.volume = 0.1
+	music.volume = 0.3
 	music.loop = true
 	music.autoplay = true
-  music.play()
+	
+		music.play()
+	
+  
+  
 }
 function explosionSound(){
 	let explosionMonster = new Audio()

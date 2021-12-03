@@ -33,18 +33,25 @@ var starShip = {
 		},
 	}
 	// Arm ////////////////////////////// 
-
-var arm = {
-	speedArm: 0, 
+let specialContainer = document.querySelector('.special_container_arm')
+var arm = {	 
 	numberProjectile: 3,
 	clipForArm: [],
-	arrayClassArm: [],
+	arrayClassArm: [],	
+	typeArmSrc: 'img/rocet-export.png',
+	lazerSrc:  'img/lazer.png',
+	rocketSrc: 'img/rocet-export.png',
+	mineSrc: 'img/mine.png',
 }
 class Arm {
 	constructor() {
+		this.accelerationArm = 0
+		this.speedArm = 10
+		this.armWidth = 20
+	  this.armHeight = 90
 		this.shut = false
 		this.posLy = starShip.posY
-		this.posLx = starShip.posX + 70.5
+		this.posLx = starShip.posX + (starShip.wShip/2) - (this.armWidth / 2)+5
 	}
 	pusk(bool) {
 		this.shut = bool
@@ -57,20 +64,20 @@ class Arm {
 		if (this.shut == false) {
 			// arm.speedArm = 0
 			this.posLy = starShip.posY
-			this.posLx = starShip.posX + 70.5
+			this.posLx = starShip.posX + (starShip.wShip/2) - (this.armWidth / 2)+5
 		}
-		if (this.posLy == this.collision) this.posLy = this.collision
-		if (this.shut) this.posLy -= arm.speedArm
+		// if (this.posLy == this.collision) this.posLy = this.collision
+		if (this.shut) this.posLy -= this.speedArm += this.accelerationArm
 		else {
 			this.posLy = starShip.posY
 		}
 
 	}
 	drawArm() {
-		ctx.drawImage(arm.clipForArm[s], this.posLx, this.posLy, 20, 90);
+		ctx.drawImage(arm.clipForArm[s], this.posLx, this.posLy, this.armWidth , this.armHeight);
 	}
 }
-// let armas = new Arm();
+
 // Stars //////////////////
 
 var stars = {
@@ -118,11 +125,13 @@ class Monster {
 		    monster.tickMonstCount = 0
       }
 		
-		  monster.tickMonstCount++ 
-			if(this.posMy > h){
-				this.posMy = -100
-				this.posMx = Math.random() * (w-100)
-			}
+	   
+		if(this.posMy > h){
+			this.posMy = -100
+			this.posMx = Math.random() * (w-100)
+		}
+
+		monster.tickMonstCount++
 	}
 	explosionMonst(){
 		if(this.blow){
@@ -151,4 +160,3 @@ class Monster {
 		}
   }
 }
-// console.dir(monster.posMx,monster.posMy)

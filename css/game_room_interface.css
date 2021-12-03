@@ -1,0 +1,76 @@
+.special_container_arm{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	z-index: 1000;
+	height: 40px;
+	display: flex;
+}
+
+.block_arm:nth-child(1){
+	background:  url(../img/rocet-export.png) no-repeat;	
+}
+.block_arm:nth-child(2){
+	background:  url(../img/lazer.png) no-repeat;
+}
+.block_arm:nth-child(3){
+	background:  url(../img/mine.png) no-repeat;
+}
+.special_container_arm .block_arm{
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+  background-size: contain;
+	background-position: center center;
+	border: 1px solid white;
+	cursor: pointer;
+}
+/*Count score*/
+
+.count-score{
+	position: absolute;
+	display: flex;
+	top: 20px;
+	left: 20px;
+	width: 200px;
+	height: 40px;
+	color: white;
+	font-size: 25px;
+	align-items: center;
+}
+.title_score{
+	/*text-transform: uppercase;*/
+}
+.number_score{
+	color: #E2E37F;
+	margin-left: 20px;
+	font-size: 30px;
+}
+/*Pause menu*/
+
+.pause_menu{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(102,118,135,.6);
+	padding: 50vh;
+}
+.option_block{
+	width: 15%;
+	color: white;
+	font-size: 40px;
+	line-height: 0.8;
+	margin: 0 auto;
+	text-align: center;
+	transform: translateY(-50%);
+}
+.option_block li{
+	margin-bottom: 30px;
+}
+.option_block li:hover{
+	text-shadow: 0px 0px 10px rgb(141,214,204);
+	cursor: pointer;
+}

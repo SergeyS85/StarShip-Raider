@@ -1,5 +1,6 @@
 let requestId
 let pauseMenu = document.querySelector('.pause_menu')
+
 function start() {
     if (!requestId) {
        requestId = window.requestAnimationFrame(tick);
@@ -11,6 +12,7 @@ function stop() {
        requestId = undefined;
     }
 }
+// /////////////////
 function pauseAnimation(){
 	if(!pause){
 		start()

@@ -1,28 +1,26 @@
 let loadMenu = document.querySelector('.load_menu')
 let gameInterface = document.querySelector('.game_interface')
-let sceneMenu = true;
-let sceneGame = false;
+
+
 function menu(){
 	if(sceneGame){
 		initGame()
-		loadMenu.classList.remove('off')
-		gameInterface.classList.add('on')
+		loadMenu.classList.toggle('off',true)
+		gameInterface.classList.toggle('off',false)
 		pause = false
+		
 	}
 	if(sceneMenu){
-		gameMenu()
-		loadMenu.classList.add('on')
-		gameInterface.classList.remove('off')
+		// gameMenu()
+		// startBgImage()
+		// startBackgroundMusic()
+		loadMenu.classList.toggle('off',false)
+		gameInterface.classList.toggle('off',true)
 		pause = true
 	}
 
 }
-function switchSceneInterface(){
-		loadMenu.classList.add('on')
-		gameInterface.classList.add('off')
-		// gameMenu()	
-}
-
+menu()
 switchScene()
 // requestAnimationFrame(menu)
 // switchSceneInterface()

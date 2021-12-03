@@ -2,7 +2,7 @@ let ship = new Image();
 let bg = new Image();
 // let monst = new Image() 
 let shiftX = 0;
-
+// let typeArmSrc = arm.rocketSrc
 let shiftMonsterExplosionX = 0;
 let tickCount = 0;
 
@@ -14,8 +14,7 @@ function loadImage() {
 		stars.arrStars[j].src = 'img/moveCosmos/star' + Math.ceil(Math.random() * 10) + '.png'
 	}
 	for (let l in arm.clipForArm) {
-		arm.clipForArm[l].src = 'img/rocet-export.png'
-
+		  arm.clipForArm[l].src = arm.typeArmSrc
 	}
 	for(let j in monster.arrayImageMonster){
 		monster.arrayImageMonster[j].src = 'img/the_new_sprite_monster/all_sprite_monster.png'
