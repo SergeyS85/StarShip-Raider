@@ -36,16 +36,17 @@ var starShip = {
 let specialContainer = document.querySelector('.special_container_arm')
 var arm = {	 
 	numberProjectile: 3,
+	accelerationArm: 0,
 	clipForArm: [],
 	arrayClassArm: [],	
 	typeArmSrc: 'img/rocet-export.png',
-	lazerSrc:  'img/lazer.png',
-	rocketSrc: 'img/rocet-export.png',
-	mineSrc: 'img/mine.png',
+	
 }
 class Arm {
 	constructor() {
-		this.accelerationArm = 0
+		this.lazerSrc =  'img/lazer.png'
+	  this.rocketSrc = 'img/rocet-export.png'
+	  this.mineSrc = 'img/mine.png'
 		this.speedArm = 10
 		this.armWidth = 20
 	  this.armHeight = 90
@@ -67,7 +68,7 @@ class Arm {
 			this.posLx = starShip.posX + (starShip.wShip/2) - (this.armWidth / 2)+5
 		}
 		// if (this.posLy == this.collision) this.posLy = this.collision
-		if (this.shut) this.posLy -= this.speedArm += this.accelerationArm
+		if (this.shut) this.posLy -= this.speedArm += arm.accelerationArm
 		else {
 			this.posLy = starShip.posY
 		}
@@ -127,6 +128,10 @@ class Monster {
 		
 	   
 		if(this.posMy > h){
+			looseLifeSound()
+			lifeCount.loosingOneLife()
+			// lifeCount.gameOver()
+      console.log(pause)
 			this.posMy = -100
 			this.posMx = Math.random() * (w-100)
 		}
@@ -160,3 +165,22 @@ class Monster {
 		}
   }
 }
+// LifeCount and GameOver ////////////////////
+
+lifeCount = {
+	looselife: 20,
+	pauseMenuClass: document.querySelector('.pause_menu'),
+	numberLife: document.querySelector('.number_life'),
+	gameOver: function(){
+		if(this.looselife === 0){
+			pause = !pause
+			pauseAnimation()
+			console.log(pause)
+			// this.pauseMenuClass.innerHTML = '<h1>Game Over</h1>'
+		}
+	},
+	loosingOneLife: function(){
+		this.numberLife.innerHTML = --this.looselife
+	}, 
+}
+

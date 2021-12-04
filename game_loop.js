@@ -18,8 +18,9 @@ function tick() {
 function initGame() {
 
 	moveShip() // Функция по контролю движения корабля с клавиатуры true/false 
-	switchArm() // Переключение типа орудий в панели орудий с права в низу
+	
 	createTheNewArm() // Создание выбранного орудия 
+	switchArm() // Переключение типа орудий в панели орудий с права в низу
 	redrawStars() // Создание объектов изображения звёзд
 	armFire() // keyboard стрельба из орудия	
 	createArrayMonster() // Создание массива объектов монстра(new Image)

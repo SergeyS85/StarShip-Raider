@@ -9,16 +9,11 @@ let requestId_2
 let sceneMenu = true;
 let sceneGame = false;
 function startBackgroundMusic(){
-	console.log(sceneMenu)
-	
-		// window.addEventListener('load',function(){
-			setTimeout(function(){
-				// if(sceneMenu){
-			    musicGame()
-			  // }  
-		  },4000)
-		// })
-	
+	window.addEventListener('DOMContentLoaded',function(){
+		setTimeout(function(){			
+		    musicGame() 
+	  },4000)
+	})	
 }
 
 // /////////////////////////

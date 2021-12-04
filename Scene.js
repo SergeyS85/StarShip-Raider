@@ -7,7 +7,7 @@ function menu(){
 		initGame()
 		loadMenu.classList.toggle('off',true)
 		gameInterface.classList.toggle('off',false)
-		pause = false
+		// pause = false
 		
 	}
 	if(sceneMenu){
@@ -16,13 +16,9 @@ function menu(){
 		// startBackgroundMusic()
 		loadMenu.classList.toggle('off',false)
 		gameInterface.classList.toggle('off',true)
-		pause = true
+		// pause = true
 	}
 
 }
 menu()
 switchScene()
-// requestAnimationFrame(menu)
-// switchSceneInterface()
-
-

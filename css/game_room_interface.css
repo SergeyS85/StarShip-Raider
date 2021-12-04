@@ -33,22 +33,36 @@
 
 .count-score{
 	position: absolute;
-	display: flex;
+	/*display: flex;*/
+	flex-direction: column;
 	top: 20px;
 	left: 20px;
 	width: 200px;
-	height: 40px;
+	height: 200px;
 	color: white;
 	font-size: 25px;
-	align-items: center;
+	/*align-items: center;*/
 }
 .title_score{
 	/*text-transform: uppercase;*/
 }
-.number_score{
+.score_block,.life_block{
+	display: flex;
+}
+.number_score,.number_life{
 	color: #E2E37F;
 	margin-left: 20px;
 	font-size: 30px;
+}
+.number_life:after{
+	display: inline-block;
+	content: '';
+	width: 30px;
+	height: 30px;
+	margin-left: 2px;
+	margin-bottom: -5px;
+	background-image: url('../img/pixel_hurt.png');
+	background-size: 30px 30px
 }
 /*Pause menu*/
 
@@ -78,3 +92,7 @@
 	text-shadow: 0px 0px 10px rgb(141,214,204);
 	cursor: pointer;
 }
+/*.game-over h1{
+	font-size: 100px;
+	color: white;
+}*/

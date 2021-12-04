@@ -9,6 +9,7 @@ function detectRocketXY(){
 			    if(monster.arrayClassMonster[j].headShotMonster){
 			      monster.arrayClassMonster[j].blow = true
 			    	explosionSound()
+			    	dethMonsterSound()
 			      countScore()
 			      arm.arrayClassArm[i].posLy = starShip.posY
 			      arm.arrayClassArm[i].shut = false
