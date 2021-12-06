@@ -76,6 +76,12 @@
 	background: rgba(102,118,135,.6);
 	padding: 50vh;
 }
+.pause_menu h1{
+	color: white;
+	font-size: 200px;
+	text-align: center;
+	margin: -150px;
+}
 .option_block{
 	width: 15%;
 	color: white;

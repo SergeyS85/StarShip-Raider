@@ -128,7 +128,8 @@ class Monster {
 		
 	   
 		if(this.posMy > h){
-			looseLifeSound()
+			// looseLifeSound()
+			pauseSound()
 			lifeCount.loosingOneLife()
 			lifeCount.gameOver()
 			this.posMy = -100
@@ -174,8 +175,8 @@ let lifeCount = {
 		if(this.looselife === 0){
 			pause = !pause
 			pauseAnimation()
-			console.log(pause)
-			this.pauseMenuClass.innerHTML = `<h1 color='white' font-size='100px'>Game Over</h1>`
+			console.log('pause:'+pause)
+			this.pauseMenuClass.innerHTML = `<h1>Game Over</h1>`
 		}
 	},
 	loosingOneLife: function(){
