@@ -44,3 +44,4 @@ function looseLifeSound(){
 	looseLife.volume = 0.8
 	looseLife.play()
 }
+

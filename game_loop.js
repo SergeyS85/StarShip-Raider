@@ -52,6 +52,3 @@ function initGame() {
 
 // switchScene() // Переключение сцены клавишей 'z'
 // console.log(typeArm.dataset.lazer)
-
-
-
