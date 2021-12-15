@@ -128,9 +128,12 @@ class Monster {
 		
 	   
 		if(this.posMy > h){
-			// looseLifeSound()
-			pauseSound()
+			looseLifeSound()
+			// pauseSound()
 			lifeCount.loosingOneLife()
+			if(lifeCount.looselife === 0){
+				pause = true
+			}
 			lifeCount.gameOver()
 			this.posMy = -100
 			this.posMx = Math.random() * (w-100)
@@ -168,16 +171,17 @@ class Monster {
 // LifeCount and GameOver ////////////////////
 
 let lifeCount = {
-	looselife: 2,
+	looselife: 20,
 	pauseMenuClass: document.querySelector('.pause_menu'),
 	numberLife: document.querySelector('.number_life'),
 	gameOver: function(){
-		if(this.looselife === 0){
+		
 			pause = !pause
 			pauseAnimation()
+			stop()
 			console.log('pause:'+pause)
 			this.pauseMenuClass.innerHTML = `<h1>Game Over</h1>`
-		}
+		
 	},
 	loosingOneLife: function(){
 		this.numberLife.innerHTML = --this.looselife

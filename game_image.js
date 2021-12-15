@@ -13,7 +13,7 @@ function loadImage() {
 	for (let j in stars.arrStars) {
 		stars.arrStars[j].src = 'img/moveCosmos/star' + Math.ceil(Math.random() * 10) + '.png'
 	}
-	for (let l in arm.clipForArm) {
+	for (let l in arm.clipForArm) { 
 		  arm.clipForArm[l].src = arm.typeArmSrc
 	}
 	for(let j in monster.arrayImageMonster){

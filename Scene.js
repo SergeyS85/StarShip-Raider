@@ -20,5 +20,6 @@ function menu(){
 	}
 
 }
-menu()
+menu() 
 switchScene()
+ 

@@ -15,7 +15,7 @@ function moveShip() {
     }
     if (e.keyCode == 38) {
       up = true;
-    }
+    } 
     if (e.keyCode == 40) {
       down = true;
     }
@@ -105,7 +105,8 @@ function switchArm(){
   specialContainer.addEventListener('click',function(e){
   // ///////////////////////////////  // 
     if(e.target.className === 'block_arm lazer'){
-      arm.numberProjectile = 10
+      arm.arrayClassArm.length = 0
+      arm.numberProjectile = 5
       console.log(arm.numberProjectile)
       soundOfArm = lazerSound
       // arm.accelerationArm = 1
@@ -122,6 +123,7 @@ function switchArm(){
     }
   // //////////////////////////////  
     if(e.target.className === 'block_arm rocket'){
+      arm.arrayClassArm.length = 0
       arm.numberProjectile = 3
       console.log(arm.numberProjectile)
       arm.accelerationArm = 0
@@ -134,11 +136,12 @@ function switchArm(){
         arm.clipForArm[l].src = arm.arrayClassArm[l].rocketSrc
         arm.arrayClassArm[l].armWidth = 20;
         arm.arrayClassArm[l].armHeight = 90;
-        arm.arrayClassArm[l].speedArm = 10
+        arm.arrayClassArm[l].speedArm = 10;
       }
     }
   // //////////////////////////////  
     if(e.target.className === 'block_arm mine'){
+      arm.arrayClassArm.length = 0
       arm.numberProjectile = 3
       console.log(arm.numberProjectile)
       arm.accelerationArm = 0
@@ -152,6 +155,8 @@ function switchArm(){
         arm.arrayClassArm[l].armHeight = 100;
         arm.arrayClassArm[l].speedArm = 0.2
       }
-    }      
+    } 
+    // arm.arrayClassArm.length = 0
+    console.log(arm.arrayClassArm)     
   })
 }
