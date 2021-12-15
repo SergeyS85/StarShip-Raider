@@ -63,11 +63,9 @@ class Arm {
 			this.posLy = starShip.posY
 		}
 		if (this.shut == false) {
-			// arm.speedArm = 0
 			this.posLy = starShip.posY
 			this.posLx = starShip.posX + (starShip.wShip/2) - (this.armWidth / 2)+5
 		}
-		// if (this.posLy == this.collision) this.posLy = this.collision
 		if (this.shut) this.posLy -= this.speedArm += arm.accelerationArm
 		else {
 			this.posLy = starShip.posY
@@ -125,15 +123,13 @@ class Monster {
 		    this.shiftFrameX = (this.shiftFrameX >= this.frameRateLength) ? 0 : this.shiftFrameX += 64;
 		    monster.tickMonstCount = 0
       }
-		
-	   
+			   
 		if(this.posMy > h){
 			looseLifeSound()
-			// pauseSound()
 			lifeCount.loosingOneLife()
-			if(lifeCount.looselife === 0){
-				pause = true
-			}
+			// if(lifeCount.looselife === 0){
+			// 	pause = true
+			// }
 			lifeCount.gameOver()
 			this.posMy = -100
 			this.posMx = Math.random() * (w-100)
@@ -175,13 +171,9 @@ let lifeCount = {
 	pauseMenuClass: document.querySelector('.pause_menu'),
 	numberLife: document.querySelector('.number_life'),
 	gameOver: function(){
-		
-			pause = !pause
-			pauseAnimation()
-			stop()
-			console.log('pause:'+pause)
-			this.pauseMenuClass.innerHTML = `<h1>Game Over</h1>`
-		
+			if(this.looselife === 0){
+				this.pauseMenuClass.innerHTML = `<h1>Game Over</h1>`
+			}		
 	},
 	loosingOneLife: function(){
 		this.numberLife.innerHTML = --this.looselife

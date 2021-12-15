@@ -3,7 +3,7 @@ let soundOfArm = rocketSound
 
 function lazerSound(){	
 	let soundForRocket = new Audio();
-	soundForRocket.src = 'sound/Sound_ArcaneDesintegrate.mp3'
+	soundForRocket.src = 'sound/lazer.mp3'
 	soundForRocket.volume = 0.6
 	soundForRocket.play()	
 }
@@ -40,7 +40,7 @@ function dethMonsterSound(){
 }
 function looseLifeSound(){
 	let looseLife = new Audio()
-	looseLife.src = 'sound/looseLife.mp3'
+	looseLife.src = 'sound/loose.mp3'
 	looseLife.volume = 0.8
 	looseLife.play()
 }

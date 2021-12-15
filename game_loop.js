@@ -11,7 +11,7 @@ function tick() {
 	createShip(); // Создание корабля 
   detectRocketXY() // Коллизия ракеты с монстром(столкновение)
   redrawMonster() // Отрисовка монстра(методы монстра) 
-  // if(lifeCount.looselife == 19) return
+  if(lifeCount.looselife == 0) return
 	// ///////////////////
 	start() // Старт и пауза игры с появлением меню 
 }
