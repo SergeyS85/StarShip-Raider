@@ -103,6 +103,3 @@ canvas{
 		width: 100%;
 	}
 }
-.preloader .load_container:hover {
-	visibility: hidden;
-}

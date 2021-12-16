@@ -39,14 +39,14 @@ var arm = {
 	accelerationArm: 0,
 	clipForArm: [],
 	arrayClassArm: [],	
-	typeArmSrc: 'img/rocet-export.png',
+	typeArmSrc: './img/rocet-export.png',
 	
 }
 class Arm {
 	constructor() {
-		this.lazerSrc =  'img/lazer.png'
-	  this.rocketSrc = 'img/rocet-export.png'
-	  this.mineSrc = 'img/mine.png'
+		this.lazerSrc =  './img/lazer.png'
+	  this.rocketSrc = './img/rocet-export.png' 
+	  this.mineSrc = './img/mine.png'
 		this.speedArm = 10
 		this.armWidth = 20
 	  this.armHeight = 90
@@ -114,7 +114,7 @@ class Monster {
 	}
 	drawMonst() {
 		for(let m = 0;m < monster.arrayImageMonster.length;m++){
-			ctx.drawImage(monster.arrayImageMonster[m],this.shiftFrameX,this.shiftFrameY , 64,64,this.posMx, this.posMy+= monster.speedMonster, 100, 100);
+			ctx.drawImage(monster.arrayImageMonster[m],this.shiftFrameX,this.shiftFrameY , 50,50,this.posMx, this.posMy+= monster.speedMonster, 100, 100);
 						
 		}
 	}
@@ -127,9 +127,6 @@ class Monster {
 		if(this.posMy > h){
 			looseLifeSound()
 			lifeCount.loosingOneLife()
-			// if(lifeCount.looselife === 0){
-			// 	pause = true
-			// }
 			lifeCount.gameOver()
 			this.posMy = -100
 			this.posMx = Math.random() * (w-100)

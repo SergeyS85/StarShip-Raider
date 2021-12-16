@@ -109,7 +109,6 @@ function switchArm(){
     if(e.target.className === 'block_arm rocket'){
       arm.arrayClassArm.length = 0
       arm.numberProjectile = 3
-      console.log(arm.numberProjectile)
       arm.accelerationArm = 0
       soundOfArm = rocketSound
       for (let i = 0; i < arm.numberProjectile; i++) {
@@ -126,8 +125,9 @@ function switchArm(){
   // //////////////////////////////  
     if(e.target.className === 'block_arm mine'){
       arm.arrayClassArm.length = 0
-      arm.numberProjectile = 3
+      arm.numberProjectile = 30
       arm.accelerationArm = 0
+      soundOfArm = mineSound
       for (let i = 0; i < arm.numberProjectile; i++) {
         arm.arrayClassArm.push(new Arm())
         arm.clipForArm.push(new Image)
