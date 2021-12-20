@@ -53,8 +53,7 @@ class Arm {
 		this.shiftFrameYArm = 0
 		this.imageWidth  = 47
 		this.imageHeight = 117
-		this.frameRateLengthArm = 393
-				
+		this.frameRateLengthArm = 393				
 		this.speedArm = 10
 		this.armWidth = 20
 	  this.armHeight = 90
