@@ -74,6 +74,8 @@ function drawNewArm() {
 	for (let i = 0; i < arm.arrayClassArm.length; i++) {
 		arm.arrayClassArm[i].createArm()
 		arm.arrayClassArm[i].drawArm()
+		arm.arrayClassArm[i].animationMine()
+		// console.dir(arm.arrayClassArm)
 	}
 }
 

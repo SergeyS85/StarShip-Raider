@@ -2,7 +2,8 @@ let right = false;
 let left = false;
 let up = false;
 let down = false;
-let pause = false
+let pause = false;
+let mine = false;
 let s = 0; // Переменная в которой задаётся номер стреляемого снаряда
 let typeArm = document.querySelectorAll('.block_arm')
 function moveShip() {
@@ -91,23 +92,29 @@ function switchArm(){
   specialContainer.addEventListener('click',function(e){
   // ///////////////////////////////  // 
     if(e.target.className === 'block_arm lazer'){
+      mine = false;
       arm.arrayClassArm.length = 0 // Обнуление массива
+      arm.clipForArm.length = 0 // Обнуление массива
       arm.numberProjectile = 5 // Количество зарядов в обойме(длина массива arm.arrayClassArm)
       soundOfArm = lazerSound // Переменной присваивается ссылка на соответствующую функцию
       for (let i = 0; i < arm.numberProjectile; i++) { // Цикл пушит в два массива новый класс и новые избражения
         arm.arrayClassArm.push(new Arm())
         arm.clipForArm.push(new Image)
       }
-      for (let l in arm.clipForArm) {
-        arm.clipForArm[l].src = arm.arrayClassArm[l].lazerSrc // Цикл обрабатывает те два массива и задаёт нужные значения
+      for (let l = 0;l < arm.numberProjectile;l++) {
+        arm.clipForArm[l].src = arm.lazerSrc // Цикл обрабатывает те два массива и задаёт нужные значения
         arm.arrayClassArm[l].armWidth = 10;
         arm.arrayClassArm[l].armHeight = 100;
+        arm.arrayClassArm[l].imageWidth = 9;
+        arm.arrayClassArm[l].imageHeight = 47;
         arm.arrayClassArm[l].speedArm = 35
       }
     }
   // //////////////////////////////  
     if(e.target.className === 'block_arm rocket'){
+      mine = false;
       arm.arrayClassArm.length = 0
+      arm.clipForArm.length = 0
       arm.numberProjectile = 3
       arm.accelerationArm = 0
       soundOfArm = rocketSound
@@ -115,29 +122,36 @@ function switchArm(){
         arm.arrayClassArm.push(new Arm())
         arm.clipForArm.push(new Image)
       }
-      for (let l in arm.clipForArm) {
-        arm.clipForArm[l].src = arm.arrayClassArm[l].rocketSrc
+      for (let l = 0;l < arm.numberProjectile;l++) {
+        arm.clipForArm[l].src = arm.rocketSrc
         arm.arrayClassArm[l].armWidth = 20;
         arm.arrayClassArm[l].armHeight = 90;
+        arm.arrayClassArm[l].imageWidth = 47;
+        arm.arrayClassArm[l].imageHeight = 117;
         arm.arrayClassArm[l].speedArm = 10;
       }
     }
   // //////////////////////////////  
     if(e.target.className === 'block_arm mine'){
+      mine = true
       arm.arrayClassArm.length = 0
-      arm.numberProjectile = 30
+      arm.clipForArm.length = 0
+      arm.numberProjectile = 3
       arm.accelerationArm = 0
       soundOfArm = mineSound
       for (let i = 0; i < arm.numberProjectile; i++) {
         arm.arrayClassArm.push(new Arm())
         arm.clipForArm.push(new Image)
       }
-      for (let l in arm.clipForArm) {
-        arm.clipForArm[l].src = arm.arrayClassArm[l].mineSrc
-        arm.arrayClassArm[l].armWidth = 100;
-        arm.arrayClassArm[l].armHeight = 100;
+      for (let l = 0;l < arm.numberProjectile;l++) {
+        arm.clipForArm[l].src = arm.mineSrc
+        arm.arrayClassArm[l].armWidth = 80;
+        arm.arrayClassArm[l].armHeight = 80;
+        arm.arrayClassArm[l].imageWidth = 131;
+        arm.arrayClassArm[l].imageHeight = 131;
         arm.arrayClassArm[l].speedArm = 0.2
       }
-    }      
+    }     
   })
+
 }

@@ -40,13 +40,21 @@ var arm = {
 	clipForArm: [],
 	arrayClassArm: [],	
 	typeArmSrc: './img/rocet-export.png',
+	lazerSrc :  './img/lazer.png',
+	rocketSrc : './img/rocet-export.png', 
+	mineSrc : './img/images/mine-sheet-sheet.png',
+	frameStep : 131,
+	tickMineCount : 0,
 	
 }
 class Arm {
 	constructor() {
-		this.lazerSrc =  './img/lazer.png'
-	  this.rocketSrc = './img/rocet-export.png' 
-	  this.mineSrc = './img/mine.png'
+		this.shiftFrameXArm = 0
+		this.shiftFrameYArm = 0
+		this.imageWidth  = 47
+		this.imageHeight = 117
+		this.frameRateLengthArm = 393
+				
 		this.speedArm = 10
 		this.armWidth = 20
 	  this.armHeight = 90
@@ -73,7 +81,17 @@ class Arm {
 
 	}
 	drawArm() {
-		ctx.drawImage(arm.clipForArm[s], this.posLx, this.posLy, this.armWidth , this.armHeight);
+		ctx.drawImage(arm.clipForArm[s],this.shiftFrameXArm,this.shiftFrameYArm,this.imageWidth,this.imageHeight, this.posLx, this.posLy, this.armWidth , this.armHeight);
+	}
+	animationMine(){
+		// console.log(this.shiftFrameXArm)
+		if(mine){
+			if(arm.tickMineCount > 30){
+				this.shiftFrameXArm = (this.shiftFrameXArm >= this.frameRateLengthArm) ? 0 : this.shiftFrameXArm += arm.frameStep
+				arm.tickMineCount = 0
+			}
+			arm.tickMineCount++
+		}
 	}
 }
 
@@ -114,7 +132,7 @@ class Monster {
 	}
 	drawMonst() {
 		for(let m = 0;m < monster.arrayImageMonster.length;m++){
-			ctx.drawImage(monster.arrayImageMonster[m],this.shiftFrameX,this.shiftFrameY , 50,50,this.posMx, this.posMy+= monster.speedMonster, 100, 100);
+			ctx.drawImage(monster.arrayImageMonster[m],this.shiftFrameX,this.shiftFrameY , 64,64,this.posMx, this.posMy+= monster.speedMonster, 100, 100);
 						
 		}
 	}
