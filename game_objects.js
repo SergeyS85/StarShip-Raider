@@ -39,10 +39,10 @@ var arm = {
 	accelerationArm: 0,
 	clipForArm: [],
 	arrayClassArm: [],	
-	typeArmSrc: './img/rocet-export.png',
+	typeArmSrc: './img/rocket.png',
 	lazerSrc :  './img/lazer.png',
-	rocketSrc : './img/rocet-export.png', 
-	mineSrc : './img/images/mine-sheet-sheet.png',
+	rocketSrc : './img/rocket.png', 
+	mineSrc : './img/images/all_sprite_mine.png',
 	frameStep : 131,
 	tickMineCount : 0,
 	
@@ -89,8 +89,17 @@ class Arm {
 				this.shiftFrameXArm = (this.shiftFrameXArm >= this.frameRateLengthArm) ? 0 : this.shiftFrameXArm += arm.frameStep
 				arm.tickMineCount = 0
 			}
+			if(this.shut){
+				ctx.beginPath();
+				ctx.strokeStyle = "green";
+        ctx.arc(this.posLx + this.armWidth/2, this.posLy + this.armHeight/2, 100, 0, 2 * Math.PI);
+        ctx.stroke();
+			}
 			arm.tickMineCount++
 		}
+	}
+	blowMine(){
+
 	}
 }
 
