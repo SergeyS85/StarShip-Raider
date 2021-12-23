@@ -49,6 +49,8 @@ var arm = {
 }
 class Arm {
 	constructor() {
+		// this.mineSrc = './img/images/all_sprite_mine.png'
+		// this.frameStep = 131
 		this.shiftFrameXArm = 0
 		this.shiftFrameYArm = 0
 		this.imageWidth  = 47
@@ -57,6 +59,7 @@ class Arm {
 		this.speedArm = 10
 		this.armWidth = 20
 	  this.armHeight = 90
+	  this.blowMine = false
 		this.shut = false
 		this.posLy = starShip.posY
 		this.posLx = starShip.posX + (starShip.wShip/2) - (this.armWidth / 2)+5
@@ -85,7 +88,7 @@ class Arm {
 	animationMine(){
 		// console.log(this.shiftFrameXArm)
 		if(mine){
-			if(arm.tickMineCount > 30){
+			if(arm.tickMineCount > 3){
 				this.shiftFrameXArm = (this.shiftFrameXArm >= this.frameRateLengthArm) ? 0 : this.shiftFrameXArm += arm.frameStep
 				arm.tickMineCount = 0
 			}
@@ -98,8 +101,24 @@ class Arm {
 			arm.tickMineCount++
 		}
 	}
-	blowMine(){
-
+	explosionMine(){
+		if(this.blowMine){
+			// this.mineSrc = './img/images/blow_mine.png'
+			this.frameRateLengthArm = 2304
+			arm.frameStep = 128
+			this.shiftFrameYArm = 262
+			this.imageWidth = 128
+			this.imageHeight = 136
+			this.shut = true
+		}
+		if(this.blowMine && this.shiftFrameXArm >= this.frameRateLengthArm){
+			this.blowMine = false
+			this.shut = false
+			// this.mineSrc = './img/images/all_sprite_mine.png'
+			this.shiftFrameYArm = 0
+			this.frameRateLengthArm = 393
+			arm.frameStep = 131
+		}
 	}
 }
 

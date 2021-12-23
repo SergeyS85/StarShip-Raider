@@ -8,6 +8,9 @@ function detectRocketXY(){
 				  // //////////////////////          
 			    if(monster.arrayClassMonster[j].headShotMonster){
 			      monster.arrayClassMonster[j].blow = true
+			      if(mine){
+			      	arm.arrayClassArm[i].blowMine = true
+			      }
 			    	explosionSound()
 			    	dethMonsterSound()
 			      countScore()

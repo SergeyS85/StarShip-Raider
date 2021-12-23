@@ -46,7 +46,7 @@ function dethMonsterSound(){
 }
 function looseLifeSound(){
 	let looseLife = new Audio()
-	looseLife.src = './sound/loose.mp3'
+	looseLife.src = './sound/Sound_LooseLife.wav'
 	looseLife.volume = 0.8
 	looseLife.play()
 }

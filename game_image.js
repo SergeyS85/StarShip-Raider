@@ -58,7 +58,6 @@ function createShip() {
 		shiftX = (shiftX >= (1075 - 215)) ? 0 : shiftX += 215
 		tickCount = 0
 	}
-
 	tickCount++
 }
 
@@ -69,28 +68,27 @@ function createTheNewArm() {
 		arm.clipForArm.push(new Image)
 	}
 }
+
 // Отрисовка орудия
 function drawNewArm() { 
 	for (let i = 0; i < arm.arrayClassArm.length; i++) {
 		arm.arrayClassArm[i].createArm()
 		arm.arrayClassArm[i].drawArm()
 		arm.arrayClassArm[i].animationMine()
-		// console.dir(arm.arrayClassArm)
+		arm.arrayClassArm[i].explosionMine()
 	}
 }
 
-
 // Создание массива монстров
 function createArrayMonster(){
-   for(let i = 0;i < monster.countMonster;i++){
-   	
+   for(let i = 0;i < monster.countMonster;i++){  	
    	monster.arrayClassMonster.push(new Monster())
    	monster.arrayImageMonster.push(new Image)
    	monster.posMx.push(Math.random() * w)
    	monster.posMy.push(Math.random() * -600)
    }
-
 }
+
 // Отрисовка монстра
 function redrawMonster(){
 	for(let i = 0;i < monster.arrayClassMonster.length;i++){
