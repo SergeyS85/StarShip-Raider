@@ -1,8 +1,6 @@
 let ship = new Image(); 
-let bg = new Image();
-// let monst = new Image() 
+let bg = new Image(); 
 let shiftX = 0;
-// let typeArmSrc = arm.rocketSrc
 let shiftMonsterExplosionX = 0;
 let tickCount = 0;
 
@@ -73,9 +71,9 @@ function createTheNewArm() {
 function drawNewArm() { 
 	for (let i = 0; i < arm.arrayClassArm.length; i++) {
 		arm.arrayClassArm[i].createArm()
-		arm.arrayClassArm[i].drawArm()
-		arm.arrayClassArm[i].animationMine()
-		arm.arrayClassArm[i].explosionMine()
+		arm.arrayClassArm[i].explosionMine() 			
+		arm.arrayClassArm[i].animationMine()	
+		arm.arrayClassArm[i].drawArm()	
 	}
 }
 
@@ -98,3 +96,5 @@ function redrawMonster(){
 		monster.arrayClassMonster[i].AIMonster()					
 	}
 }
+
+

@@ -53,3 +53,7 @@ function initGame() {
 
 // switchScene() // Переключение сцены клавишей 'z'
 // console.log(typeArm.dataset.lazer)
+for (let j of stars.arrStars) {
+		console.log(j)
+	}
+// console.log(stars.arrStars)

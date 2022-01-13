@@ -51,6 +51,7 @@ function armFire() {
         if(s >= arm.arrayClassArm.length-1) s = 0
       }
     }
+    console.log(mine)
   })
 }
 function pauseStart(){
@@ -93,6 +94,7 @@ function switchArm(){
   // ///////////////////////////////  // 
     if(e.target.className === 'block_arm lazer'){
       mine = false;
+      s = 0
       arm.arrayClassArm.length = 0 // Обнуление массива
       arm.clipForArm.length = 0 // Обнуление массива
       arm.numberProjectile = 5 // Количество зарядов в обойме(длина массива arm.arrayClassArm)
@@ -110,9 +112,11 @@ function switchArm(){
         arm.arrayClassArm[l].speedArm = 35
       }
     }
+
   // //////////////////////////////  
     if(e.target.className === 'block_arm rocket'){
       mine = false;
+      s = 0
       arm.arrayClassArm.length = 0
       arm.clipForArm.length = 0
       arm.numberProjectile = 3
@@ -134,6 +138,7 @@ function switchArm(){
   // //////////////////////////////  
     if(e.target.className === 'block_arm mine'){
       mine = true
+      s = 0
       arm.arrayClassArm.length = 0
       arm.clipForArm.length = 0
       arm.numberProjectile = 3
@@ -145,10 +150,10 @@ function switchArm(){
       }
       for (let l = 0;l < arm.numberProjectile;l++) {
         arm.clipForArm[l].src = arm.mineSrc
-        arm.arrayClassArm[l].armWidth = 80;
-        arm.arrayClassArm[l].armHeight = 80;
-        arm.arrayClassArm[l].imageWidth = 131;
-        arm.arrayClassArm[l].imageHeight = 131;
+        arm.arrayClassArm[l].armWidth = 100;
+        arm.arrayClassArm[l].armHeight = 100;
+        arm.arrayClassArm[l].imageWidth = 132;
+        arm.arrayClassArm[l].imageHeight = 132;
         arm.arrayClassArm[l].speedArm = 0.2
       }
     }     

@@ -1,10 +1,10 @@
 let sceneMenu = true;
 let sceneGame = false;
 function startBackgroundMusic(){
-	window.addEventListener('DOMContentLoaded',function(){
+	window.addEventListener('load',function(){
 		setTimeout(function(){			
 		    musicGame() 
-	  },4000)
+	  },7000)
 	})	
 }
 
