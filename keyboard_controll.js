@@ -21,7 +21,7 @@ function moveShip() {
       down = true;
     }
 
-
+ 
   })
   document.addEventListener('keyup', function(e) {
     if (e.keyCode == 39) {
